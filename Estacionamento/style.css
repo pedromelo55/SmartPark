@@ -91,6 +91,7 @@
   .parking-space {
     width: 50px;
     height: 50px;
+    color: black;
     border: 1px solid #333;
     text-align: center;
     line-height: 50px;
