@@ -125,7 +125,7 @@
     // Função para obter o estado atual das vagas da API
     async function getVagaStatus() {
   try {
-    const server = <%= dominio%>;
+    const server = window.location.origin;
     const response = await fetch(`${server}/loadVagas`);
 
     const vagas = await response.json();
@@ -177,7 +177,7 @@
     // Função para lidar com o clique em uma vaga de estacionamento
     async function handleParkingSpaceClick(id) {
       console.log("Clicou na vaga com ID:", id);
-      const server = <%= dominio%>;
+      const server = window.location.origin;
       const response = await fetch(`${server}/updateVaga/${id}`);
       // Adicione aqui a lógica que deseja executar ao clicar na vaga
     }

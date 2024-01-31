@@ -125,7 +125,7 @@
     // Função para obter o estado atual das vagas da API
     async function getVagaStatus() {
   try {
-    const server = <%= dominio%>;
+    const server = window.location.origin;
     const response = await fetch(`${server}/loadVagas`);
 
     const vagas = await response.json();
