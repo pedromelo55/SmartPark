@@ -125,7 +125,8 @@
     // Função para obter o estado atual das vagas da API
     async function getVagaStatus() {
   try {
-    const response = await fetch("http://localhost:3002/loadVagas");
+    const server = <%= dominio%>;
+    const response = await fetch(`${server}/loadVagas`);
 
     const vagas = await response.json();
     return vagas;
@@ -168,29 +169,6 @@
     document.addEventListener("DOMContentLoaded", function () {
       startChecking();
     });
-  </script>
-
-<script>
-    // ... (código anterior) ...
-  
-    // Função para lidar com o clique em uma vaga de estacionamento
-    async function handleParkingSpaceClick(id) {
-      console.log("Clicou na vaga com ID:", id);
-      const response = await fetch("http://localhost:3002/updateVaga/" + id);
-
-      // Adicione aqui a lógica que deseja executar ao clicar na vaga
-    }
-  
-    // Função principal para executar a verificação a cada 5 segundos
-      
-      // Adiciona o evento de clique às vagas de estacionamento
-      const parkingSpaces = document.querySelectorAll(".parking-space");
-      parkingSpaces.forEach((space) => {
-        space.addEventListener("click", function () {
-          const id = this.id;
-          handleParkingSpaceClick(id);
-        });
-      });
   </script>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
